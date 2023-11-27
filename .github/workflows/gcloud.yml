@@ -29,5 +29,10 @@ jobs:
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+    #- name: 'Use gcloud CLI'
+    #  run: 'gcloud info'
+
+    - name: Run build and submit script file
+      run: |
+         chmod +x ./build_and_submit.sh
+         ./build_and_submit.sh
