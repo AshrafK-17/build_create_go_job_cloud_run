@@ -10,6 +10,8 @@ COMMIT_HASH=$(git rev-parse --short HEAD)
 # TIMESTAMP=$(date +%Y%m%d%H%M%S)
 VERSION="1.0"
 
+gcloud auth login --cred-file=/home/runner/work/build_create_go_job_cloud_run/build_create_go_job_cloud_run/gha-creds-610eb75e55b2b58c.json
+  
 echo ""
 echo "-----------------------------------------------------------------------"
 echo "Building Artifact Registry for Hello World version: $VERSION"
