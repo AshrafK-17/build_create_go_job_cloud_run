@@ -6,18 +6,13 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+  
 jobs:
 
   build:
     runs-on: ubuntu-latest
 
-    # Add "id-token" with the intended permissions.
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-
     steps:
-    # actions/checkout MUST come before auth
     - uses: 'actions/checkout@v4'
 
     - id: 'auth'
@@ -26,9 +21,12 @@ jobs:
       with:
         workload_identity_provider: 'projects/621853391897/locations/global/workloadIdentityPools/githubactions/providers/github'
         service_account: 'serviceaccountkey@eco-spirit-404410.iam.gserviceaccount.com'
+        permissions:
+          contents: 'read'
+          id-token: 'write'
 
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Use gcloud CLI'
-      run: 'gcloud info
+      run: 'gcloud info'
