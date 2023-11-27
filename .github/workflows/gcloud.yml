@@ -22,7 +22,8 @@ jobs:
 
     permissions: 
           contents: 'read'
-          id-token: 'write'
+          access-token: 'write'
+          
 
     steps:
     - uses: 'actions/checkout@v4'
@@ -31,6 +32,7 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v1'
       with:
+        token_format: 'access_token'
         workload_identity_provider: 'projects/621853391897/locations/global/workloadIdentityPools/githubactions/providers/github'
         service_account: 'serviceaccountkey@eco-spirit-404410.iam.gserviceaccount.com'
 
