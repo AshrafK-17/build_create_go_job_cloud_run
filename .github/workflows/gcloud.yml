@@ -31,14 +31,16 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v1'
       with:
+        token_format: "access_token"
+        create_credentials_file: true
         workload_identity_provider: 'projects/621853391897/locations/global/workloadIdentityPools/githubactions/providers/github'
         service_account: 'serviceaccountkey@eco-spirit-404410.iam.gserviceaccount.com'
 
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: 'Enable gcloudignore'
-      run: 'gcloud config set gcloudignore/enabled true'
+    - name: set crdential_file
+      run: gcloud auth login --cred-file=${{steps.auth.outputs.credentials_file_path}  
 
     - name: 'Enable gcloudignore'
       run: 'gcloud config set gcloudignore/enabled true'
