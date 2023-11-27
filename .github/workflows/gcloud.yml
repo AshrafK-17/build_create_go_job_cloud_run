@@ -39,7 +39,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: set crdential_file
-      run: gcloud auth login --cred-file=${{steps.auth.outputs.credentials_file_path}}  
+      run: gcloud auth print-access-token --impersonate-service-account=serviceaccountkey@eco-spirit-404410.iam.gserviceaccount.com 
 
     - name: 'Enable gcloudignore'
       run: 'gcloud config set gcloudignore/enabled true'
