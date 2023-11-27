@@ -20,11 +20,11 @@ jobs:
 
     - name: Run gofmt check for Hello World -Go Project
       run: if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then exit 1; fi
-      working-directory: root
+      working-directory: .
 
     - name: Build Hello World -Go Project
       run: go build -v .
-      working-directory: root
+      working-directory: .
 
     #- name: Test Go Project
     #  run: go test -v ./...
