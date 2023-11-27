@@ -36,3 +36,4 @@ override.tf.json
 terraform.rc
 
 cloud_scheduler/Keys.json
+cloud_scheduler/variables.tf

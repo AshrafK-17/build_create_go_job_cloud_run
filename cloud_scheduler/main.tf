@@ -27,7 +27,7 @@ resource "google_cloud_scheduler_job" "job" {
   provider         = google-beta
   name             = "schedule-job"
   description      = "test http job"
-  schedule         = "*/8 * * * *"
+  schedule         = "*/2 * * * *"
   time_zone        = "Asia/Kolkata"
   attempt_deadline = "320s"
   region           = var.region
