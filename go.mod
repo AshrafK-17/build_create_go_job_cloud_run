@@ -1,3 +1,3 @@
 module github.com/AshrafK-17/helloworld
 
-go 1.21.4
+go 1.21
