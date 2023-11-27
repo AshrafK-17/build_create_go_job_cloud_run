@@ -44,14 +44,13 @@ jobs:
     - name: 'Enable gcloudignore'
       run: 'gcloud config set gcloudignore/enabled true'
 
-    - name: Build and Push Container
+    #- name: Build and Push Container
+    #  run: |
+    #      gcloud artifacts repositories create "${{ env.REPO_NAME }}" \
+    #      --repository-format="${{ env.REPO_FORMAT }}" \
+    #      --location="${{ env.REGION }}"
+
+    - name: Run build and submit script file
       run: |
-          gcloud artifacts repositories create "${{ env.REPO_NAME }}" \
-          --repository-format="${{ env.REPO_FORMAT }}" \
-          --location="${{ env.REGION }}"
-
-
-    #- name: Run build and submit script file
-    # run: |
-    #    chmod +x ./build_and_submit.sh
-    #   ./build_and_submit.sh
+       chmod +x ./build_and_submit.sh
+       ./build_and_submit.sh
