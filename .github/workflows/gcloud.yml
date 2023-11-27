@@ -40,7 +40,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: set crdential_file
-      run: gcloud auth login --cred-file=${{steps.auth.outputs.credentials_file_path}  
+      run: gcloud auth login --cred-file=${{steps.auth.outputs.credentials_file_path}}  
 
     - name: 'Enable gcloudignore'
       run: 'gcloud config set gcloudignore/enabled true'
