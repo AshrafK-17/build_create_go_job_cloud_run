@@ -32,7 +32,6 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         token_format: "access_token"
-        create_credentials_file: true
         workload_identity_provider: 'projects/621853391897/locations/global/workloadIdentityPools/githubactions/providers/github'
         service_account: 'serviceaccountkey@eco-spirit-404410.iam.gserviceaccount.com'
 
