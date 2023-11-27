@@ -1,10 +1,18 @@
 name: gcloud auth and build script
 
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  REGION: us-central1
+  REPO_NAME: build-test-script
+  REPO_FORMAT: docker
+  SOURCE_DIR: .
+  COMMIT_HASH: $(git rev-parse --short "$GITHUB_SHA")
+
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
   workflow_dispatch:
   
 jobs:
@@ -29,10 +37,20 @@ jobs:
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
-    #- name: 'Use gcloud CLI'
-    #  run: 'gcloud info'
+    - name: 'Enable gcloudignore'
+      run: 'gcloud config set gcloudignore/enabled true'
 
-    - name: Run build and submit script file
+    - name: 'Enable gcloudignore'
+      run: 'gcloud config set gcloudignore/enabled true'
+
+    - name: Build and Push Container
       run: |
-         chmod +x ./build_and_submit.sh
-         ./build_and_submit.sh
+          gcloud artifacts repositories create "${{ env.REPO_NAME }}" \
+          --repository-format="${{ env.REPO_FORMAT }}" \
+          --location="${{ env.REGION }}"
+
+
+    #- name: Run build and submit script file
+    # run: |
+    #    chmod +x ./build_and_submit.sh
+    #   ./build_and_submit.sh
