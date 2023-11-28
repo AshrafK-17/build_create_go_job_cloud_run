@@ -38,7 +38,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
       with:
         project_id: ${{ env.PROJECT_ID }}
-        service_account_key: ${{ secrets.GGOOGLE_CREDENTIALS }}
+        service_account_key: ${{ secrets.GOOGLE_CREDENTIALS }}
         export_default_credentials: true 
 
     - name: 'Enable gcloudignore'
