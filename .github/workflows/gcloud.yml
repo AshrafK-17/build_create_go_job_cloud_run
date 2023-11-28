@@ -55,13 +55,6 @@ jobs:
       run: |
        chmod +x ./build_and_submit.sh
        ./build_and_submit.sh
-      
-    jobs:
-
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
 
       call-terraform.yml:
         uses: ./.github/workflows/terraform.yml
