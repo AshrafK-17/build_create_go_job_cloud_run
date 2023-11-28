@@ -16,15 +16,13 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    defaults:
-    run:
-      working-directory: ./cloud_scheduler 
     #environment: production
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
+        working-directory: ./cloud_scheduler 
 
     steps:
     # Checkout the repository to the GitHub Actions runner
