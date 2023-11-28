@@ -10,3 +10,9 @@ variable "region" {
   default     = "us-central1"
 }
 
+variable "COMMIT_HASH" {
+  type        = string
+  description = "short commit SHA"
+  default     = "7573cd6"
+}
+
