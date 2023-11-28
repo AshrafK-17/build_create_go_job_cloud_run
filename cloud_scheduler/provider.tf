@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-state-actionscicd"
+    bucket = "tf-state-actionscicd"
     prefix = "prod"
   }
 }
