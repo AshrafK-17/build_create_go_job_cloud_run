@@ -1,15 +1,13 @@
 name: 'Terraform'
 
 on:
-  workflow_call:
+  workflow_dispatch:
   workflow_run:
     workflows: ["gcloud auth and build script"]
     types:
       - completed
 
-defaults:
-  run:
-    working-directory: cloud_scheduler 
+
 
 permissions:
   contents: read
@@ -18,6 +16,9 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
+    defaults:
+    run:
+      working-directory: ./cloud_scheduler 
     #environment: production
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
