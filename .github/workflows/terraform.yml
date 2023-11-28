@@ -7,7 +7,7 @@ on:
   workflow_call:
   workflow_dispatch:
 
- defaults:
+defaults:
   run:
     working-directory: cloud_scheduler 
 

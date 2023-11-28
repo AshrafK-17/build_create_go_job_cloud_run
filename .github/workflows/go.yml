@@ -31,7 +31,8 @@ jobs:
     #  working-directory: root
 
     call-gcloud.yml:
-    uses: ./.github/workflows/gcloud.yml
+      uses: ./.github/workflows/gcloud.yml
 
     call-terraform.yml:
-    uses: ./.github/workflows/terraform.yml
+      needs: call-gcloud.yml
+      uses: ./.github/workflows/terraform.yml
