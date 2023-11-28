@@ -55,12 +55,3 @@ jobs:
       run: |
        chmod +x ./build_and_submit.sh
        ./build_and_submit.sh
-
-  call_terraform:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Call Terraform Workflow
-      uses: build_create_go_job_cloud_runs/workflow-dispatch@v2
-      with:
-        workflow: terraform.yml

@@ -1,11 +1,11 @@
 name: 'Terraform'
 
 on:
-  #push:
-  #  branches: [ "main" ]
-  #pull_request:
   workflow_call:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["gcloud auth and build script"]
+    types:
+      - completed
 
 defaults:
   run:
