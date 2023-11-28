@@ -51,7 +51,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -input=false
+      run: terraform plan -input=false -var 'COMMIT_HASH=$(git rev-parse --short HEAD)'
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         COMMIT_HASH: ${{ env.COMMIT_HASH }}
