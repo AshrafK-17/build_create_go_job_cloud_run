@@ -48,6 +48,7 @@ jobs:
       run: terraform plan -input=false
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        COMMIT_HASH: ${{ env.COMMIT_HASH }}
         
     - name: Set Git commit hash as an environment variable
       run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
