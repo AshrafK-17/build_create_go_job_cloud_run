@@ -7,7 +7,6 @@ REPO_NAME="cloud-run-source-deploy"
 REPO_FORMAT="docker"
 SOURCE_DIR="."
 COMMIT_HASH=$(git rev-parse --short HEAD)
-# TIMESTAMP=$(date +%Y%m%d%H%M%S)
 VERSION="1.0"
 
 echo ""
