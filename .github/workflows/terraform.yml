@@ -1,9 +1,15 @@
 name: 'Terraform'
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
+  #push:
+  #  branches: [ "main" ]
+  #pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+ defaults:
+  run:
+    working-directory: cloud_scheduler 
 
 permissions:
   contents: read
@@ -51,4 +57,3 @@ jobs:
       run: terraform apply -auto-approve -input=false
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-        working-directory: cloud_scheduler

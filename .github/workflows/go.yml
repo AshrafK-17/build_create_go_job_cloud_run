@@ -29,3 +29,9 @@ jobs:
     #- name: Test Go Project
     #  run: go test -v ./...
     #  working-directory: root
+
+    call-gcloud.yml:
+    uses: ./.github/workflows/gcloud.yml
+
+    call-terraform.yml:
+    uses: ./.github/workflows/terraform.yml
