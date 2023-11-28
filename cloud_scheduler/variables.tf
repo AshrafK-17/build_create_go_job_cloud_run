@@ -13,6 +13,5 @@ variable "region" {
 variable "COMMIT_HASH" {
   type        = string
   description = "short commit SHA"
-  default     = "9857b9f3ce33"
 }
 
