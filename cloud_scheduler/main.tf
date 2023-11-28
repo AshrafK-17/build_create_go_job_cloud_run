@@ -9,7 +9,7 @@ resource "google_cloud_run_v2_job" "default" {
   template {
     template {
       containers {
-        image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/job-helloworld"
+        image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/job-helloworld:latest"
       }
       #max_retries = 3
       #timeout = 10
