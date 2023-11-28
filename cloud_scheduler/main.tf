@@ -9,7 +9,7 @@ resource "google_cloud_run_v2_job" "default" {
   template {
     template {
       containers {
-        image = "${var.region}-docker.pkg.dev/${var.project_id}/build-test-script/helloworld"
+        image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/job-helloworld"
       }
       #max_retries = 3
       #timeout = 10
@@ -39,7 +39,7 @@ resource "google_cloud_scheduler_job" "job" {
 
   http_target {
     http_method = "POST"
-    uri         = "https://${var.region}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/${var.project_id}/jobs/helloworld:run"
+    uri         = "https://${var.region}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/${var.project_id}/jobs/job-helloworld:run"
 
     oauth_token {
       service_account_email = data.google_compute_default_service_account.default.email

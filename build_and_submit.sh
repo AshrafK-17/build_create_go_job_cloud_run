@@ -3,7 +3,7 @@
 # Set your variables
 PROJECT_ID="eco-spirit-404410"
 REGION="us-central1"
-REPO_NAME="build-test-script"
+REPO_NAME="cloud-run-source-deploy"
 REPO_FORMAT="docker"
 SOURCE_DIR="."
 COMMIT_HASH=$(git rev-parse --short HEAD)
@@ -31,4 +31,4 @@ echo "-----------------------------------------------------------------------"
 echo ""
 
 # Submit a build using Cloud Build and Pack
-gcloud builds submit --pack image="${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/helloworld:${COMMIT_HASH}" "${SOURCE_DIR}"
+gcloud builds submit --pack image="${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/job-helloworld:${COMMIT_HASH}" "${SOURCE_DIR}"
