@@ -9,12 +9,13 @@ resource "google_cloud_run_v2_job" "default" {
   template {
     template {
       containers {
-        image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/job-helloworld:latest"
+        image = "us-central1-docker.pkg.dev/eco-spirit-404410/cloud-run-source-deploy/job-helloworld:7573cd6"
       }
       #max_retries = 3
       #timeout = 10
     }
   }
+  
 
   lifecycle {
     ignore_changes = [
