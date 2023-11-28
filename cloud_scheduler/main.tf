@@ -15,7 +15,7 @@ resource "google_cloud_run_v2_job" "default" {
       #timeout = 10
     }
   }
-  
+
 
   lifecycle {
     ignore_changes = [
